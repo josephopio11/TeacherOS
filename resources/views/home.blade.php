@@ -29,8 +29,8 @@
                 </div>
             </div>
             <div class="progress bg-purple-100">
-                <div class="progress-bar purple-bg" role="progressbar" style="width: {{ $perc_teachers }}%"
-                    aria-valuenow="{{ $perc_teachers }}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar purple-bg" role="progressbar" style="width: {{ $perc_teachers ? $perc_teachers : "None" }}%"
+                    aria-valuenow="{{ $perc_teachers ? $perc_teachers : "None" }}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
         <!-- End Icon Cart -->
@@ -44,7 +44,7 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Subjects Recorded</h6>
-                    <h3 class="text-bold mb-10">{{ $num_subjects }}</h3>
+                    <h3 class="text-bold mb-10">{{ $num_subjects ? $num_subjects : "None" }}</h3>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Observations</h6>
-                    <h3 class="text-bold mb-10">34K</h3>
+                    <h3 class="text-bold mb-10">{{ $num_lesson_observed ? $num_lesson_observed : 'None' }}</h3>
                 </div>
             </div>
 

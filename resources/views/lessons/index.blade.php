@@ -6,15 +6,15 @@
 
 <div class="title-wrapper pt-30">
     <div class="row align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div class="title d-flex align-items-center flex-wrap mb-30">
                 <h2 class="mr-40">Lesson Observations</h2>
-                {{-- <a href="{{ route('teacher.create') }}" class="main-btn primary-btn btn-hover btn-sm">
-                    <i class="lni lni-plus mr-5"></i> Add new teacher</a> --}}
+                <a href="{{ route('lesson.create') }}" class="main-btn primary-btn btn-hover btn-sm">
+                    <i class="lni lni-plus mr-5"></i> New Observation</a>
             </div>
         </div>
         <!-- end col -->
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="breadcrumb-wrapper mb-30">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">

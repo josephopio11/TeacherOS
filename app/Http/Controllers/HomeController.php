@@ -29,11 +29,15 @@ class HomeController extends Controller
         $num_teachers = Teacher::count();
         $num_subjects = Subject::count();
         $num_observed = Lesson::distinct()->count('teachers_id');
+        $num_lesson_observed = Lesson::count();
 
+        if ($num_teachers ===0) {
+            $num_teachers = 1;
+        }
         $perc_teachers = ($num_observed/$num_teachers)*100;
 
         // dd($num_teachers);
         
-        return view('home', compact('num_teachers', 'perc_teachers', 'num_subjects'));
+        return view('home', compact('num_teachers', 'perc_teachers', 'num_subjects','num_lesson_observed'));
     }
 }

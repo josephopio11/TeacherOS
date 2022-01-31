@@ -107,6 +107,6 @@ class SubjectController extends Controller
 
         $data->delete();
 
-        return redirect()->route('subject.index')->with('message', 'Subject Deleted Successfully');
+        return redirect()->route('subject.index')->with('message', 'Subject Not Deleted Successfully');
     }
 }

@@ -19,6 +19,8 @@ class CreateLessonsTable extends Migration
             $table->unsignedBigInteger('subjects_id');
             $table->unsignedBigInteger('teachers_id');
             $table->unsignedBigInteger('users_id');
+            $table->string('topic')->nullable();
+            $table->string('stream')->nullable();
             $table->integer('scheme');
             $table->integer('course_outline');
             $table->integer('learning_objectives');

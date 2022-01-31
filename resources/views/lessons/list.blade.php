@@ -6,109 +6,51 @@
             <tr>
                 <th></th>
                 <th>
-                    <h6>First Name</h6>
+                    <h6>Teacher Name</h6>
                 </th>
                 <th>
-                    <h6>Last Name</h6>
+                    <h6>Class Observed</h6>
                 </th>
                 <th>
-                    <h6>Username</h6>
+                    <h6>Score</h6>
+                </th>
+                <th>
+                    <h6>Observed by</h6>
+                </th>
+                <th>
+                    <h6>Actions</h6>
                 </th>
             </tr>
             <!-- end table row-->
         </thead>
         <tbody>
+            @foreach ($lessons as $lesson)
             <tr>
                 <td>
-                    <h6 class="text-sm">#1</h6>
+                    <h6 class="text-sm">#{{ $lesson->id }}</h6>
                 </td>
                 <td>
-                    <p>Albert</p>
+                    <p>{{ $lesson->teacher->name }}</p>
                 </td>
                 <td>
-                    <p>Miles</p>
+                    <p>Year {{ $lesson->studentClass->name }}</p>
                 </td>
                 <td>
-                    <p>@albert_miles</p>
+                    <p>Waiting to add in some stuff</p>
+                </td>
+                <td>
+                    <p>{{ $lesson->user->name }}</p>
+                </td>
+                <td>
+                    <a href="{{ route('lesson.show', $lesson->id) }}" class="text-primary">View</a>
+                    <a href="{{ route('lesson.edit', $lesson->id) }}" class="text-success">Edit</a>
+                    {{-- <a href="#" class="text-danger">Delete</a> --}}
                 </td>
             </tr>
-            <!-- end table row -->
-            <tr>
-                <td>
-                    <h6 class="text-sm">#2</h6>
-                </td>
-                <td>
-                    <p>John</p>
-                </td>
-                <td>
-                    <p>Doe</p>
-                </td>
-                <td>
-                    <p>@john_doe</p>
-                </td>
-            </tr>
-            <!-- end table row -->
-            <tr>
-                <td>
-                    <h6 class="text-sm">#3</h6>
-                </td>
-                <td>
-                    <p>David</p>
-                </td>
-                <td>
-                    <p>Smith</p>
-                </td>
-                <td>
-                    <p>@davidsmith</p>
-                </td>
-            </tr>
-            <!-- end table row -->
-            <tr>
-                <td>
-                    <h6 class="text-sm">#4</h6>
-                </td>
-                <td>
-                    <p>Jameel</p>
-                </td>
-                <td>
-                    <p>Kareem</p>
-                </td>
-                <td>
-                    <p>@jkreem</p>
-                </td>
-            </tr>
-            <!-- end table row -->
-            <tr>
-                <td>
-                    <h6 class="text-sm">#5</h6>
-                </td>
-                <td>
-                    <p>Anna</p>
-                </td>
-                <td>
-                    <p>Miles</p>
-                </td>
-                <td>
-                    <p>@anna_miles</p>
-                </td>
-            </tr>
-            <!-- end table row -->
-            <tr>
-                <td>
-                    <h6 class="text-sm">#6</h6>
-                </td>
-                <td>
-                    <p>Hafiz</p>
-                </td>
-                <td>
-                    <p>Miles</p>
-                </td>
-                <td>
-                    <p>@hafiz_miles</p>
-                </td>
-            </tr>
-            <!-- end table row -->
+            @endforeach
         </tbody>
     </table>
+    {{ $lessons->links() }}
+
     <!-- end table -->
 </div>
