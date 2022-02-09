@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('teacher', TeacherController::class);
     Route::resource('class', StudentClassController::class);
     Route::resource('lesson', LessonController::class);
+    Route::get('lesson/{id}/print', [LessonController::class, 'print'])->name('lesson.print');
+    Route::get('lesson/{id}/download', [LessonController::class, 'download'])->name('lesson.download');
 });
 
 Auth::routes();

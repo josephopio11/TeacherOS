@@ -64,7 +64,7 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Last Observed</h6>
-                    <h3 class="text-bold mb-10">{{ Auth::user()->name }}</h3>
+                    <h3 class="text-bold mb-10">{{ $last_observed->teacher->name }}</h3>
                 </div>
             </div>
 
@@ -111,4 +111,76 @@
         </div>
     </div>
 </div>
+
+<div class="col-lg-7">
+    <div class="card-style mb-30">
+      <div class="
+          title
+          d-flex
+          flex-wrap
+          align-items-center
+          justify-content-between
+          mb-10
+        ">
+        <div class="left">
+          <h6 class="text-medium mb-2">Market Overview</h6>
+          <p class="text-gray text-sm">
+            Lorem ipsum dolor sit amet, consectetur
+          </p>
+        </div>
+        <div class="right">
+          <div class="select-style-1 mb-2">
+            <div class="select-position select-sm">
+              <select class="light-bg">
+                <option value="">Monthly</option>
+                <option value="">Yearly</option>
+                <option value="">Weekly</option>
+              </select>
+            </div>
+          </div>
+          <!-- end select -->
+        </div>
+      </div>
+      <!-- End Title -->
+      <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        <div id="legend3">
+          <ul class="legend3 d-flex align-items-center mb-30">
+            <li>
+              <div class="d-flex">
+                <span class="bg-color primary-bg"> </span>
+                <div class="text">
+                  <p class="text-sm text-dark">ETH</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="d-flex">
+                <span class="bg-color info-bg"></span>
+                <div class="text">
+                  <p class="text-sm text-dark">XMR</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="d-flex">
+                <span class="bg-color purple-bg"></span>
+                <div class="text">
+                  <p class="text-sm text-dark">LTC</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="d-flex">
+                <span class="bg-color success-bg"></span>
+                <div class="text">
+                  <p class="text-sm text-dark">BTC</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <canvas id="Chart5" style="width: 465px; height: 356px; display: block;" width="465" height="356" class="chartjs-render-monitor"></canvas>
+      </div>
+    </div>
+  </div>
 @endsection

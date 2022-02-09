@@ -29,6 +29,9 @@
     <!-- end row -->
 </div>
 
+@include('layouts.notifications')
+
+
 <form action="{{ route('lesson.store') }}" method="POST">
 @csrf
     <div class="row">
@@ -154,7 +157,7 @@
                     <div class="select-style-1">
                         <label>3. Learning objectives communicated at the start of the lesson</label>
                         <div class="select-position">
-                            <select name learning objectives>
+                            <select name="learning_objectives">
                                 <option value="">Choose an answer</option>
                                 <option value="1">Below Average</option>
                                 <option value="2">Satisfactory</option>
@@ -307,7 +310,7 @@
                     <div class="select-style-1">
                         <label>13. Prompt action is taken to address poor behaviour</label>
                         <div class="select-position">
-                            <select name="poor_bahaviour">
+                            <select name="poor_behaviour">
                                 <option value="">Choose an answer</option>
                                 <option value="1">Below Average</option>
                                 <option value="2">Satisfactory</option>

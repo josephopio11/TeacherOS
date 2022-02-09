@@ -17,7 +17,7 @@ class Teacher extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lessons(): HasMany
+    public function lessons()
     {
         return $this->hasMany(Lesson::class, 'teachers_id', 'id');
     }

@@ -31,6 +31,8 @@ class HomeController extends Controller
         $num_observed = Lesson::distinct()->count('teachers_id');
         $num_lesson_observed = Lesson::count();
 
+        $last_observed = Lesson::latest()->with('teacher')->first();
+
         if ($num_teachers ===0) {
             $num_teachers = 1;
         }
@@ -38,6 +40,6 @@ class HomeController extends Controller
 
         // dd($num_teachers);
         
-        return view('home', compact('num_teachers', 'perc_teachers', 'num_subjects','num_lesson_observed'));
+        return view('home', compact('num_teachers', 'perc_teachers', 'num_subjects','num_lesson_observed','last_observed'));
     }
 }

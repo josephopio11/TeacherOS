@@ -10,6 +10,8 @@
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="{{ asset('css/lineicons.css') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
+
 </head>
 
 <body>
@@ -40,7 +42,20 @@
                                 <button id="menu-toggle" class="main-btn primary-btn btn-hover">
                                     <i class="lni lni-chevron-left me-2"></i> {{ __('Menu') }}
                                 </button>
+                                @if (request()->routeIs('lesson.show'))
+                                    
+                                <a href="{{ route('lesson.print', $lesson->id) }}" class="main-btn success-btn btn-hover" target="_blank">
+                                    {{ __('Print') }}
+                                </a>
+                                <a href="{{ route('lesson.edit', $lesson->id) }}" class="main-btn secondary-btn btn-hover">
+                                    {{ __('Edit') }}
+                                </a>
+                                <a href="{{ route('lesson.download', $lesson->id) }}" class="main-btn danger-btn btn-hover">
+                                    {{ __('Download PDF') }}
+                                </a>
+                                @endif
                             </div>
+
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-6">
@@ -82,15 +97,15 @@
         <!-- ========== section start ========== -->
         <section class="section">
             <div class="container-fluid">
-                
+
                 @yield('content')
             </div>
             <!-- end container -->
         </section>
         <!-- ========== section end ========== -->
 
-        
-        
+
+
 
         <!-- ========== footer start =========== -->
         <footer class="footer">
@@ -117,6 +132,12 @@
     <!-- ======== main-wrapper end =========== -->
 
     <!-- ========= All Javascript files linkup ======== -->
+    <script src="https://unpkg.com/bs5-toast/dist/bs5-toast.js"></script>
+    <script>
+        new bs5.Toast({
+		body: 'Hello world',
+	}).show()
+    </script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
