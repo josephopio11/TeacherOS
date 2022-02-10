@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Lesson;
 use App\Models\Subject;
 use App\Models\Teacher;
+use Barryvdh\DomPDF\PDF;
 use App\Models\StudentClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,7 +129,13 @@ class LessonController extends Controller
      */
     public function edit(Lesson $lesson)
     {
-        return "Plan to edit things later";
+        dd($lesson);
+        
+        $teachers = Teacher::get();
+        $subjects = Subject::get();
+        $classes  = StudentClass::get();
+
+        return view('lessons.edit', ['lesson' => $lesson, 'teachers' => $teachers, 'subjects' => $subjects, 'classes' => $classes]);
     }
 
     /**
@@ -181,7 +188,33 @@ class LessonController extends Controller
 
     public function download($id)
     {
-        #
+        $lesson = Lesson::findOrFail($id);
+
+        $sum = $lesson->scheme +
+                $lesson->course_outline +
+                $lesson->learning_objectives +
+                $lesson->knowledge +
+                $lesson->relevant +
+                $lesson->dressing +
+                $lesson->assignments +
+                $lesson->notes +
+                $lesson->class_control +
+                $lesson->evaluation +
+                $lesson->feedback +
+                $lesson->praised +
+                $lesson->poor_behaviour +
+                $lesson->learner_engagement +
+                $lesson->time_utilisation +
+                $lesson->caie_demands;
+        $percentage = $sum/0.8;
+
+        $lesson->sum = $sum;
+        $lesson->percentage = $percentage;
+
+        
+        return redirect()->back();
+        
+
     }
 
 }
