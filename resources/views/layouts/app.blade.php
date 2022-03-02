@@ -43,7 +43,7 @@
                                     <i class="lni lni-chevron-left me-2"></i> {{ __('Menu') }}
                                 </button>
                                 @if (request()->routeIs('lesson.show'))
-                                    
+
                                 <a href="{{ route('lesson.print', $lesson->id) }}" class="main-btn success-btn btn-hover" target="_blank">
                                     {{ __('Print') }}
                                 </a>
@@ -132,6 +132,7 @@
     <!-- ======== main-wrapper end =========== -->
 
     <!-- ========= All Javascript files linkup ======== -->
+    @yield('scripts')
     <script src="https://unpkg.com/bs5-toast/dist/bs5-toast.js"></script>
     <script>
         new bs5.Toast({

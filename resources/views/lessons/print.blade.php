@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ $lesson->teacher->name }} - Lesson Observation Report</title>
+    <title>{{ $lesson->teacher->name }} - Lesson Observation Report - on {{ $lesson->created_at->isoFormat('Y-MM-D') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -228,7 +228,7 @@
                     <hr>
                 </div>
                 <div class="notice">
-                    <p>{{ $lesson->comment }}</p>
+                    <p>{!! $lesson->comment !!}</p>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -242,7 +242,8 @@
             </div>
             <br>
             <br>
-            <div class="comments" style="">
+            <hr>
+            <div class="comments" style="background-color: #fff7cc">
                 <h4>Candidate's Comment</h4>
                 <br>
                 <br>
@@ -278,16 +279,12 @@
                     <tr style="border-bottom: 1px solid black;">
                         <td>&nbsp;</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid black;">
-                        <td>&nbsp;</td>
-                    </tr>
-
 
                 </table>
 
                 <div class="row">
                     <div class="col">
-                        <h6>Teacher Name: <strong>Joseph Opio</strong></h6>
+                        <h6>Teacher Name: <strong>{{ $lesson->teacher->name }}</strong></h6>
                     </div>
                     <div class="col text-end">
                         <h6>Signature:......................................................................................................................
@@ -295,7 +292,7 @@
                     </div>
                 </div>
             </div>
-          
+            <hr>
         </main>
     </div>
 

@@ -372,7 +372,7 @@
                 <div class="col-12">
                     <div class="input-style-1">
                         <label>Comment</label>
-                        <textarea placeholder="Type here..." rows="5" class="bg-transparent" name="comment"></textarea>
+                        <textarea placeholder="Type here..." rows="5" class="bg-transparent" name="comment" id="editor"></textarea>
                     </div>
                 </div>
                 <!-- end col -->
@@ -390,4 +390,15 @@
     <!-- end col -->
 </form>
 
+@endsection
+
+@section('scripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @endsection

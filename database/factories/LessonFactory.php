@@ -15,8 +15,8 @@ class LessonFactory extends Factory
     {
         return [
             'student_classes_id' => rand(1,13),
-            'subjects_id' => rand(1,20),
-            'teachers_id' => rand(1,10),
+            'subjects_id' => 1,
+            'teachers_id' => 1,
             'users_id' => 1,
             'scheme' => rand(1,5),
             'course_outline' => rand(1,5),

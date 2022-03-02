@@ -152,12 +152,13 @@
                 <hr>
             </div>
             <div class="notice">
-                <p>another thing</p>
+                {!! $lesson->comment !!}
+                <p></p>
             </div>
-            
+
         </div>
         <br>
-    
+
     </main>
 </div>
 
