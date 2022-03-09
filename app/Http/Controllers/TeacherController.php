@@ -47,12 +47,12 @@ class TeacherController extends Controller
 
             return redirect()->route('teacher.index')->with('message', 'Lesson added successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
 
     }
 
-   
+
 
     /**
      * Show the form for editing the specified resource.
@@ -90,7 +90,7 @@ class TeacherController extends Controller
 
             return redirect()->route('teacher.index')->with('message', 'Lesson updated successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
     }
 

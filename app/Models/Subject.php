@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Subject extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = ['name','description'];
 
     /**
@@ -17,7 +17,7 @@ class Subject extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lessons(): HasMany
+    public function lessons()
     {
         return $this->hasMany(Lesson::class, 'subject_id', 'id');
     }

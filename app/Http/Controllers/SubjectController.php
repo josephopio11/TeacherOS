@@ -15,7 +15,7 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = Subject::orderBy('id','desc')->paginate(10);
-        
+
         return view('subjects.index', compact('subjects'));
     }
 
@@ -47,13 +47,13 @@ class SubjectController extends Controller
 
             return redirect()->route('subject.index')->with('message', 'Lesson added successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
 
         // dd($validated);
     }
 
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,7 +90,7 @@ class SubjectController extends Controller
 
             return redirect()->route('subject.index')->with('message', 'Lesson updated successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
 
     }

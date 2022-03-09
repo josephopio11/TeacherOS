@@ -15,7 +15,7 @@ class StudentClassController extends Controller
     public function index()
     {
         $student_classes = StudentClass::orderBy('name','asc')->paginate(13);
-        
+
         return view('classes.index', compact('student_classes'));
     }
 
@@ -47,13 +47,13 @@ class StudentClassController extends Controller
 
             return redirect()->route('class.index')->with('message', 'Lesson added successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
 
         // dd($validated);
     }
 
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,7 +90,7 @@ class StudentClassController extends Controller
 
             return redirect()->route('class.index')->with('message', 'Lesson updated successfully');
         }else {
-            return redirect()->back()->withErrors($validator)->with('message', 'For sure you have done nothing. Try again!');
+            return redirect()->back()->with('message', 'For sure you have done nothing. Try again!');
         }
 
     }
