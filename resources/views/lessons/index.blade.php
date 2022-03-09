@@ -46,8 +46,8 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Latest</h6>
-                    <h3 class="text-bold mb-10">{{ $latest->teacher->name }}</h3>
-                    
+                    <h3 class="text-bold mb-10">{{ $latest == null ? "None" : $latest->teacher->name }}</h3>
+
                 </div>
             </div>
             <!-- End Icon Cart -->
@@ -61,7 +61,7 @@
                 <div class="content">
                     <h6 class="mb-10">Observations</h6>
                     <h3 class="text-bold mb-10">{{ $lessons->count() }}</h3>
-                    
+
                 </div>
             </div>
             <!-- End Icon Cart -->
@@ -75,7 +75,7 @@
                 <div class="content">
                     <h6 class="mb-10">Total Users</h6>
                     <h3 class="text-bold mb-10">{{ $users }}</h3>
-                    
+
                 </div>
             </div>
             <!-- End Icon Cart -->
@@ -88,8 +88,8 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Last Assessor</h6>
-                    <h3 class="text-bold mb-10">{{ $latest->user->name }}</h3>
-                    
+                    <h3 class="text-bold mb-10">{{ $latest == null ? "None" : $latest->user->name }}</h3>
+
                 </div>
             </div>
             <!-- End Icon Cart -->

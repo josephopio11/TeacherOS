@@ -33,13 +33,17 @@ class HomeController extends Controller
 
         $last_observed = Lesson::latest()->with('teacher')->first();
 
+        // dd($last_observed);
+
         if ($num_teachers ===0) {
-            $num_teachers = 1;
+            $perc_teachers = 0;
+        } else {
+            $perc_teachers = ($num_observed/$num_teachers)*100;
         }
-        $perc_teachers = ($num_observed/$num_teachers)*100;
+
 
         // dd($num_teachers);
-        
+
         return view('home', compact('num_teachers', 'perc_teachers', 'num_subjects','num_lesson_observed','last_observed'));
     }
 }

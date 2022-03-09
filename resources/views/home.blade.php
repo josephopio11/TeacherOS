@@ -24,7 +24,7 @@
                     <i class="lni lni-smile"></i>
                 </div>
                 <div class="content">
-                    <h6 class="mb-10">Teachers Observed</h6>
+                    <h6 class="mb-10">Teachers</h6>
                     <h3 class="text-bold mb-10">{{ $num_teachers }}</h3>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="content">
                     <h6 class="mb-10">Last Observed</h6>
-                    <h3 class="text-bold mb-10">{{ $last_observed->teacher->name }}</h3>
+                    <h3 class="text-bold mb-10">{{ $last_observed == null ? "None" : $last_observed->teacher->name }}</h3>
                 </div>
             </div>
 
