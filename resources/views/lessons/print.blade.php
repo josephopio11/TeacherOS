@@ -215,7 +215,28 @@
             <p></p>
             <hr>
             <p><small>Please see overleaf for comments and recommendations from Assessor and Candidate</small></p>
+            <hr>
+            <h6 class="text-center">Key</h6>
+            <table class="table table-bordered table-sm">
+                <tr>
+                    <td>Excellent</td>
+                    <td>Very Good</td>
+                    <td>Good</td>
+                    <td>Satisfactory</td>
+                    <td>Poor</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+
+            </table>
             <footer>
+
+
                 <strong> Teacher Observation Tool </strong> created by <a href="https://www.josephopio.com"
                     target="joseph">Joseph OPIO</a>. &copy; {{ Carbon\Carbon::now('Y')->isoFormat('Y') }} All rights
                 reserved.
